@@ -42,7 +42,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Write what you want to convert: ");
-        String input = scanner.nextLine();
+        String input = scanner.nextLine().toUpperCase();
 
         System.out.println(toMorseCode(input));
     }
