@@ -1,0 +1,15 @@
+kocarek;700
+kolo;1200
+panenka;550
+pastelky;100
+lego;300
+kalhoty;600
+cepice;100
+kniha;250
+boty;680
+kosmetika;320
+saty;1000
+mobil;1200
+
+
+
