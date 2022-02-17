@@ -6,7 +6,7 @@ package com.company.example;
 public class Main {
 
     public static void main(String[] args) {
-        calculatePrimeNumber(500);
+        calculatePrimeNumber(100);
     }
 
     public static void calculatePrimeNumber(int max) {
