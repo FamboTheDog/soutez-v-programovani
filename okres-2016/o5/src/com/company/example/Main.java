@@ -11,13 +11,13 @@ import java.util.ArrayList;
 
 public class Main {
 
-    private static final int width  = 600;
-    private static final int height = 600;
+    private static final int width  = 500;
+    private static final int height = 500;
+    public static final JFrame frame = new JFrame("Hodiny");
 
     private static BufferedReader reader;
 
     public static void main(String[] args ) throws IOException {
-        JFrame frame = new JFrame("Hodiny");
         frame.setVisible(true);
         frame.setSize(new Dimension(width,height));
         frame.setResizable(false);
@@ -27,12 +27,11 @@ public class Main {
 
         loadFileFromResources("/Data.txt");
         ArrayList<Integer> graphData = loadDataFromFile();
-        graphData.forEach(System.out::println);
 
-        Graph graph = new Graph(new GraphData());
+        Graph graph = new Graph(graphData);
         frame.add(graph, BorderLayout.CENTER);
 
-        Settings settings = new Settings();
+        Settings settings = new Settings(graph);
         frame.add(settings, BorderLayout.SOUTH);
 
         frame.revalidate();
@@ -43,7 +42,7 @@ public class Main {
         ArrayList<Integer> graphData = new ArrayList<>();
         String line;
         while ((line = reader.readLine()) != null && !line.equals(";")) {
-            graphData.add(Integer.parseInt(line.substring(0, line.length() - 2)));
+            graphData.add(Integer.parseInt(line.substring(0, line.length() - 1)));
         }
         return graphData;
     }
