@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/iml/1.iml" filepath="$PROJECT_DIR$/iml/1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/okres-2015/2/2.iml" filepath="$PROJECT_DIR$/okres-2015/2/2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/okres-2015/3/3.iml" filepath="$PROJECT_DIR$/okres-2015/3/3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/okres-2015/4/4.iml" filepath="$PROJECT_DIR$/okres-2015/4/4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/okres-2015/5/5.iml" filepath="$PROJECT_DIR$/okres-2015/5/5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okres_2015/4/4.iml" filepath="$PROJECT_DIR$/okres_2015/4/4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okres_2015/5/5.iml" filepath="$PROJECT_DIR$/okres_2015/5/5.iml" />
       <module fileurl="file://$PROJECT_DIR$/okres-2016/o1/o1.iml" filepath="$PROJECT_DIR$/okres-2016/o1/o1.iml" />
       <module fileurl="file://$PROJECT_DIR$/okres-2016/o2/o2.iml" filepath="$PROJECT_DIR$/okres-2016/o2/o2.iml" />
       <module fileurl="file://$PROJECT_DIR$/okres-2016/o3/o3.iml" filepath="$PROJECT_DIR$/okres-2016/o3/o3.iml" />
@@ -16,7 +13,6 @@
       <module fileurl="file://$PROJECT_DIR$/okres-2017/ot2/ot2.iml" filepath="$PROJECT_DIR$/okres-2017/ot2/ot2.iml" />
       <module fileurl="file://$PROJECT_DIR$/okres-2017/ot3/ot3.iml" filepath="$PROJECT_DIR$/okres-2017/ot3/ot3.iml" />
       <module fileurl="file://$PROJECT_DIR$/okres-2017/ot4/ot4.iml" filepath="$PROJECT_DIR$/okres-2017/ot4/ot4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kraj-2015/ota1/ota1.iml" filepath="$PROJECT_DIR$/kraj-2015/ota1/ota1.iml" />
       <module fileurl="file://$PROJECT_DIR$/prg-soutez.iml" filepath="$PROJECT_DIR$/prg-soutez.iml" />
     </modules>
   </component>
