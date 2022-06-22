@@ -1,8 +1,5 @@
 package ustredni_2019.q1.boardtiles;
 
-import ustredni_2019.q1.GameBoard;
-import ustredni_2019.q1.InputData;
-
 import java.awt.*;
 
 public class EmptyTile extends BoardTile {

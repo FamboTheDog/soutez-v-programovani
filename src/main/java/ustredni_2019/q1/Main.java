@@ -2,15 +2,16 @@ package ustredni_2019.q1;
 
 import com.google.gson.Gson;
 import ustredni_2019.q1.boardtiles.*;
+import ustredni_2019.q1.gameboard.GameBoard;
+import ustredni_2019.q1.gameboard.InputData;
 import ustredni_2019.q1.gson.templates.JsonData;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
 
 public class Main {
 
@@ -103,9 +104,10 @@ public class Main {
                 }
                 gameBoard = new GameBoard(getInputData(data));
                 frame.add(gameBoard, BorderLayout.CENTER);
+                gameBoard.requestFocusInWindow();
                 frame.revalidate();
                 frame.repaint();
-            } catch (FileNotFoundException e) {
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });

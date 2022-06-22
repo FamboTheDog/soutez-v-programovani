@@ -1,4 +1,4 @@
-package ustredni_2019.q1;
+package ustredni_2019.q1.gameboard;
 
 import lombok.*;
 import ustredni_2019.q1.boardtiles.BoardTile;
