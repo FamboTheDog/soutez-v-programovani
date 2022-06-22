@@ -8,10 +8,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
     private static final JFrame frame = new JFrame("Pac-man");
+    private static GameBoard gameBoard = null;
 
     public static void main(String[] args) throws FileNotFoundException {
         frame.setLocationRelativeTo(null);
@@ -22,14 +26,8 @@ public class Main {
 
         frame.setLayout(new BorderLayout());
 
-        FileDialog dialog = new FileDialog(frame, "Choose an input file");
-        dialog.setFilenameFilter((dir, name) -> name.endsWith(".json"));
-        dialog.setVisible(true);
 
-        Gson gson = new Gson();
-        JsonData data = gson.fromJson(new FileReader(dialog.getDirectory() + dialog.getFile()), JsonData.class);
-
-        addGameBoard(getInputData(data));
+        addMenuBar();
 
         frame.revalidate();
         frame.repaint();
@@ -42,6 +40,7 @@ public class Main {
         inputData.setStart(jsonData.getSTART());
         inputData.setEnd(jsonData.getCIL());
         inputData.setBoardPlan(constructBoard(jsonData.getPLAN(), jsonData.getSIRKA(), jsonData.getVYSKA()));
+        System.out.println(Arrays.deepToString(inputData.getBoardPlan()));
         return inputData;
     }
 
@@ -82,9 +81,34 @@ public class Main {
         return Integer.parseInt(Character.toString(c));
     }
 
-    private static void addGameBoard(InputData data) {
-        frame.add(new GameBoard(data), BorderLayout.CENTER);
-        System.out.println("added");
+    private static void addMenuBar() {
+        JMenuBar bar = new JMenuBar();
+        JMenu menu = new JMenu("File");
+        JMenuItem item = new JMenuItem("Load level");
+        menu.add(item);
+        bar.add(menu);
+
+        frame.add(bar, BorderLayout.NORTH);
+
+        item.addActionListener(v-> {
+            FileDialog dialog = new FileDialog(frame, "Choose an input file");
+            dialog.setFilenameFilter((dir, name) -> name.endsWith(".json"));
+            dialog.setVisible(true);
+
+            Gson gson = new Gson();
+            try {
+                JsonData data = gson.fromJson(new FileReader(dialog.getDirectory() + dialog.getFile()), JsonData.class);
+                if (gameBoard != null) {
+                    frame.remove(gameBoard);
+                }
+                gameBoard = new GameBoard(getInputData(data));
+                frame.add(gameBoard, BorderLayout.CENTER);
+                frame.revalidate();
+                frame.repaint();
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
 }

@@ -8,10 +8,8 @@ public class BombTile extends BoardTile {
     }
 
     @Override
-    public void draw(Graphics2D gd, int x, int y, int cellWidth, int cellHeight) {
-        gd.setColor(getCOLOR());
-        gd.fillRect(x, y, cellWidth, cellHeight);
+    public void drawImpl(Graphics2D gd, int x, int y, int cellWidth, int cellHeight) {
         gd.setColor(Color.BLACK);
-        gd.drawString(Integer.toString(getCOST()), x, y + cellHeight);
+        drawString(gd, x, y, cellWidth, cellHeight, Integer.toString(getCOST()));
     }
 }
